@@ -17,7 +17,7 @@ if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID || !AUTH_TOKEN) {
 app.use(express.json());
 
 async function sendToTelegram(message) {
-  const url = `https://api.telegram.org/bot/${TELEGRAM_BOT_TOKEN}/sendMessage`;
+  const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
   const response = await fetch(url, {
     method: "POST",
@@ -53,7 +53,7 @@ function formatMessage(payload) {
 ${text || "(empty)"}`;
 }
 
-app.post(`/sms${AUTH_TOKEN}`, async (req, res) => {
+app.post(`/sms/${AUTH_TOKEN}`, async (req, res) => {
   console.log("Received SMS payload:", JSON.stringify(req.body, null, 2));
 
   try {
