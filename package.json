@@ -1,0 +1,23 @@
+{
+  "name": "sms-to-telegram",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Forward SMS messages to Telegram",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [
+    "sms",
+    "telegram",
+    "forwarder"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

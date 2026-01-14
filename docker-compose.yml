@@ -1,0 +1,19 @@
+services:
+  sms-forwarder:
+    build: .
+    container_name: sms-to-telegram
+    restart: unless-stopped
+    ports:
+      - "${PORT:-7362}:3000"
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - TELEGRAM_CHAT_ID=${TELEGRAM_CHAT_ID}
+      - AUTH_TOKEN=${AUTH_TOKEN}
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
