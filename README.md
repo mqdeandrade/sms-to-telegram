@@ -3,7 +3,7 @@
 A lightweight Node.js/Express application that receives SMS data via webhook and forwards it to a Telegram bot.
 The SMS forwarding is done via https://github.com/bogkonstantin/android_income_sms_gateway_webhook
 
-## Quick Start (Proxmox LXC)
+## Quick Start
 
 ```bash
 # Clone the repo
